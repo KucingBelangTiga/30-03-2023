@@ -10,7 +10,6 @@ import { Link, useParams } from "react-router-dom";
 
 function CustomerId() {
   let { customerId } = useParams();
-  let a = 1;
   console.log(customerId);
   return customerId;
 }
@@ -38,8 +37,9 @@ class Customer extends Component {
   }
 
   componentDidMount() {
-    // this.getCustomer(this.props.match.params.customerId);
-    console.log(CustomerId.a);
+    let { customerId } = useParams.customerId;
+    console.log(CustomerId.customerId);
+    this.getCustomer(customerId);
   }
 
   onChangeName(e) {

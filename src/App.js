@@ -5,6 +5,7 @@ import {
   Route,
   Link,
   useParams,
+  BrowserRouter,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -22,7 +23,7 @@ function ProfilePage() {
 class App extends Component {
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
@@ -35,6 +36,16 @@ class App extends Component {
                 Add
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/signin"} className="nav-link">
+                Sign In
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/signup"} className="nav-link">
+                Sign Up
+              </Link>
+            </li>
           </div>
         </nav>
 
@@ -43,11 +54,11 @@ class App extends Component {
             <Route exact path="/" element={<CustomersList />} />
             <Route exact path="/add" element={<AddCustomer />} />
             <Route path="/customer/:customerId" element={<Customer />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
           </Routes>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

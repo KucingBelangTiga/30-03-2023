@@ -37,8 +37,8 @@ class Customer extends Component {
   }
 
   componentDidMount() {
-    let { customerId } = useParams.customerId;
-    console.log(CustomerId.customerId);
+    let { customerId } = useParams;
+    // console.log(CustomerId.customerId);
     this.getCustomer(customerId);
   }
 
